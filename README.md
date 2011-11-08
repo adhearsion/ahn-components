@@ -1,4 +1,3 @@
-
 # Getting started
 
 *ahn-components* is an Adhearsion plugin that enables backwards compatibility while loading components. This is not the preferred way to extend Adhearsion, as a new Plugin mechanism has been added in Adhearsion v2.
@@ -22,4 +21,4 @@ gem install ahn-components
 
 # Copyright
 
-Check [License file](https://github.com/adhearsion/ahn-components/blob/develop/LICENSE)
+Check [License file](https://github.com/adhearsion/ahn-components/blob/master/LICENSE)
