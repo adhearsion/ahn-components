@@ -3,8 +3,6 @@ $:.unshift(File.join(File.dirname(__FILE__), "support"))
 require 'flexmock'
 require 'flexmock/rspec'
 
-require 'ahn-components'
-require 'adhearsion/component_manager/component_tester'
 
 RSpec.configure do |config|
   config.mock_framework = :flexmock
@@ -13,6 +11,18 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
 end
 
+module Adhearsion
+  class Plugin
+    def self.init(name)
+    end
+  end
+end
+
+require 'ahn-components'
+require 'adhearsion/component_manager/component_tester'
+
+
 class Object
   alias :the_following_code :lambda
 end
+
