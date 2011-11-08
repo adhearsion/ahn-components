@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["juandebravo"]
   s.email       = ["juandebravo@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{This gem is an Adhearsion plugin that inherits the deprecated way to load components using the components folder}
+  s.description = %q{With ahn-components you can ensure your Adhearsion application will load the components subfolder as it used to do in Adhearsion 1.x}
 
   s.rubyforge_project = "ahn-components"
 
@@ -18,7 +18,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_runtime_dependency "activesupport", [">= 3.0.10"]
+  s.add_runtime_dependency "i18n", ">= 0.5.0"
+
+  s.add_development_dependency "rspec", [">= 2.7.0"]
+  s.add_development_dependency "flexmock"
 end
