@@ -11,7 +11,13 @@ class AhnComponents < Adhearsion::Plugin
     logger.warn "Using deprecated components subsystem"
 
     components_directory = File.expand_path "components"
+    
+    Adhearsion::AHN_CONFIG.singleton_class.class_eval do
+      attr_accessor :components_to_load
+    end
 
+    Adhearsion::AHN_CONFIG.components_to_load = []
+    
     if File.directory? components_directory
       Adhearsion::Components.component_manager = Adhearsion::Components::ComponentManager.new components_directory
       Kernel.send(:const_set, :COMPONENTS, Adhearsion::Components.component_manager.lazy_config_loader)
