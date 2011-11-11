@@ -10,6 +10,16 @@ You should this dependency to your Adhearsion application, either in Gemfile or 
 gem install ahn-components
 ```
 
+If you include the dependency in your application Gemfile, that should be enough as Adhearsion loads the Bundler environment.
+
+If you use a gemspec or have just added it to your gems folder, include the line below in the script/ahn file:
+
+```ruby
+require 'adhearsion'
+require 'adhearsion/cli_commands'
+require 'ahn-components'
+```
+
 # Note on Patches/Pull Requests
 
 * Fork the project.
