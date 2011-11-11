@@ -5,8 +5,8 @@ require "ahn-components/version"
 Gem::Specification.new do |s|
   s.name        = "ahn-components"
   s.version     = Ahn::Components::VERSION
-  s.authors     = ["juandebravo"]
-  s.email       = ["juandebravo@gmail.com"]
+  s.authors     = ["juandebravo", "Ben Langfeld", "Jason Goecke"]
+  s.email       = ["juandebravo@gmail.com", "ben@langfeld.me", "jsgoecke@voxeo.com"]
   s.homepage    = ""
   s.summary     = %q{This gem is an Adhearsion plugin that inherits the deprecated way to load components using the components folder}
   s.description = %q{With ahn-components you can ensure your Adhearsion application will load the components subfolder as it used to do in Adhearsion 1.x}
