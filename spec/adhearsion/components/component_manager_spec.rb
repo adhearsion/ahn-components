@@ -137,9 +137,13 @@ describe Adhearsion::Components do
       flexmock(manager).should_receive(:load_file).once.with "#{path}/lib/#{File.basename(path)}.rb"
     end
 
-    Adhearsion::AHN_CONFIG = Class.new do
-      def self.components_to_load
-        []
+    Adhearsion.module_eval do
+      def self.config
+        Class.new do
+          def self.components_to_load
+            []
+          end
+        end
       end
     end
     manager.load_components

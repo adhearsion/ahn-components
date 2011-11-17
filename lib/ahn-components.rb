@@ -7,16 +7,20 @@ require "adhearsion/components"
 
 class AhnComponents < Adhearsion::Plugin
 
+  config :ahn_components do
+    directory "components", "Folder where you want to include your own components" 
+  end
+
   init :ahn_components do
     logger.warn "Using deprecated components subsystem"
 
-    components_directory = File.expand_path "components"
-    
-    Adhearsion::AHN_CONFIG.singleton_class.class_eval do
+    components_directory = File.expand_path Adhearsion.config[:ahn_components].directory
+
+    Adhearsion.config.singleton_class.class_eval do
       attr_accessor :components_to_load
     end
 
-    Adhearsion::AHN_CONFIG.components_to_load = []
+    Adhearsion.config.components_to_load = []
     
     if File.directory? components_directory
       Adhearsion::Components.component_manager = Adhearsion::Components::ComponentManager.new components_directory

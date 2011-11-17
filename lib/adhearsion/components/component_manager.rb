@@ -50,7 +50,7 @@ module Adhearsion
         end
 
         # Load configured system- or gem-provided components
-        AHN_CONFIG.components_to_load.each do |component|
+        Adhearsion.config.components_to_load.each do |component|
           require component
         end
       end
@@ -60,9 +60,9 @@ module Adhearsion
       #
       # @return [Hash] The loaded YAML for the given component name. An empty Hash if no YAML file exists.
       def configuration_for_component_named(component_name)
-        # Look for configuration in #{AHN_ROOT}/config/components first
-        if File.exists?("#{AHN_ROOT}/config/components/#{component_name}.yml")
-          return YAML.load_file "#{AHN_ROOT}/config/components/#{component_name}.yml"
+        # Look for configuration in #{Adhearsion.config.root}/config/components first
+        if File.exists?("#{Adhearsion.config.root}/config/components/#{component_name}.yml")
+          return YAML.load_file "#{Adhearsion.config.root}/config/components/#{component_name}.yml"
         end
 
         # Next try the local app component directory

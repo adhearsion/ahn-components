@@ -15,6 +15,9 @@ module Adhearsion
   class Plugin
     def self.init(name)
     end
+
+    def self.config(name)
+    end
   end
 end
 
